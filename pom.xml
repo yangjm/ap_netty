@@ -28,9 +28,9 @@
 	</developers>
 
 	<scm>
-		<url>https://github.com/yangjm/ap_akka</url>
-		<connection>scm:git:git://github.com/yangjm/ap_akka.git</connection>
-		<developerConnection>scm:git:git@github.com:yangjm/ap_akka.git</developerConnection>
+		<url>https://github.com/yangjm/ap_netty</url>
+		<connection>scm:git:git://github.com/yangjm/ap_netty.git</connection>
+		<developerConnection>scm:git:git@github.com:yangjm/ap_netty.git</developerConnection>
 	</scm>
 
 	<properties>
