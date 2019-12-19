@@ -55,7 +55,7 @@ public class WebSocketServerHandler<T> extends SimpleChannelInboundHandler<FullH
 			if ("Upgrade".equalsIgnoreCase(headers.get("Connection"))
 					|| "WebSocket".equalsIgnoreCase(headers.get("Upgrade"))) { // 升级为websocket连接
 				// { 获取客户端ip
-				String ip = headers.get("X-Real-IP");
+				String ip = headers.get("X-Forwarded-For");
 				if (StringUtils.isEmpty(ip))
 					ip = ((InetSocketAddress) ctx.channel().remoteAddress()).getAddress().getHostAddress();
 				String theIp = ip;
