@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.function.BiConsumer;
 
+import org.asynchttpclient.RequestBuilder;
+import org.asynchttpclient.util.HttpConstants;
+
 /**
  * 执行HTTP请求
  * 
@@ -15,6 +18,10 @@ public interface HttpRequester {
 
 	default public ResponseFuture request(String url, BiConsumer<String, Exception> process) {
 		return request(new HttpTask(url, process));
+	}
+
+	default public ResponseFuture request(String method, String url, BiConsumer<String, Exception> process) {
+		return request(new HttpTask(new RequestBuilder(HttpConstants.Methods.POST).setUrl(url).build(), process));
 	}
 
 	default public ResponseFuture request(String url, BiConsumer<String, Exception> process, Executor exec) {
