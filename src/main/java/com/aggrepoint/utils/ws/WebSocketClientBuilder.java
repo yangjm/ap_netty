@@ -92,6 +92,10 @@ public class WebSocketClientBuilder<T extends WebSocketFrame, V> {
 		return this;
 	}
 
+	public V getData() {
+		return data;
+	}
+
 	public WebSocketClientBuilder<T, V> setMaxInactiveTime(long t) {
 		maxInactiveTime = t;
 		return this;
